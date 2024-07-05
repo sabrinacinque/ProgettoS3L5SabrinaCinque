@@ -1,0 +1,33 @@
+﻿@model IEnumerable<ProgettoS3L5SabrinaCinque.Models.Anagrafica>
+
+@{
+    ViewData["Title"] = "Anagrafiche";
+}
+
+<h1 class="text-center">Anagrafiche</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Cognome</th>
+            <th>Nome</th>
+            <th>Indirizzo</th>
+            <th>Città</th>
+            <th>CAP</th>
+            <th>Codice Fiscale</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Cognome</td>
+                <td>@item.Nome</td>
+                <td>@item.Indirizzo</td>
+                <td>@item.Citta</td>
+                <td>@item.Cap</td>
+                <td>@item.Cod_Fisc</td>
+            </tr>
+        }
+    </tbody>
+</table>

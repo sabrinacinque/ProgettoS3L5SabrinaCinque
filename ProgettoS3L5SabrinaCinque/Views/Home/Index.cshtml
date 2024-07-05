@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ProgettoS3L5SabrinaCinque.Models.Verbale>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Verbali</h1>
+</div>
+
+<div>
+    <h2 class="">Elenco Verbali</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Data Violazione</th>
+                <th>Indirizzo Violazione</th>
+                <th>Nominativo Agente</th>
+                <th>Data Trascrizione Verbale</th>
+                <th>Cognome</th>
+                <th>Nome</th>
+                <th>Importo</th>
+                <th>Descrizione</th>
+                <th>Decurtamento Punti</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+                @foreach (var verbale in Model)
+                {
+                    <tr>
+                        <td>@verbale.DataViolazione.ToString("dd-MM-yyyy")</td>
+                        <td>@verbale.IndirizzoViolazione</td>
+                        <td>@verbale.Nominativo_Agente</td>
+                        <td>@verbale.DataTrascrizioneVerbale.ToString("dd-MM-yyyy")</td>
+                        <td>@verbale.Anagrafica.Cognome</td>
+                        <td>@verbale.Anagrafica.Nome</td>
+                        <td>@verbale.TipoViolazione.Importo.ToString("C")</td>
+                        <td>@verbale.TipoViolazione.Descrizione</td>
+                        <td>@verbale.TipoViolazione.DecurtamentoPunti</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
